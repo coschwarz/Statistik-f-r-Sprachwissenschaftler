@@ -63,3 +63,24 @@ Haben Sie dabei explorativ oder konfirmativ gearbeitet? Was hat das für eine Au
 
 # Lizenz
 Nur zu Prüfungszwecken.
+
+# Analyse
+Fragestellung: Wovon hängt der Preis eines Diamenten ab? Hat die Farbe eine Auswirkung auf den Preis?
+
+Zuerst Einfluss der Farbe:
+
+2 Plots für den Zusammenhang zwischen Preis und Farbe
+```{r}
+ggplot(data=diamonds) + geom_jitter(aes(x=color, y=price, color=color, fill = color),alpha=0.5)
+
+ggplot(data=diamonds) + geom_violin(aes(x=color, y=price, color=color, fill = color),alpha=0.5)
+```
+
+Die Farbe scheint keinen erkennbaren Einfluss auf den Preis zu haben. Allerdings wären gemäß der Grafik D und E etwas günstiger und I und J teurer; dies widerspricht aber den Vorgaben des Datensatzes; Fehler?!
+
+lineare Regression, um den Einfluss von Farbe auf den Preis zu prüfen. Problem: Farbe ist nicht numerisch angegeben. Deswegen zuerst:
+
+color.num <- as.numeric(diamonds$color)
+
+diamonds.lm1 <- lm(price ~ color.num, data=diamonds)
+  summary(diamonds.lm1)
