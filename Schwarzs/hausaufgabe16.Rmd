@@ -84,3 +84,5 @@ color.num <- as.numeric(diamonds$color)
 
 diamonds.lm1 <- lm(price ~ color.num, data=diamonds)
   summary(diamonds.lm1)
+  
+print(diamonds)
