@@ -54,12 +54,12 @@ ggplot(linreg,aes(x=x2,y=y)) + geom_point() + geom_smooth(method="lm")
 
 #x1:
 lm.x1 <- lm(y~x1) 
-print(lm.x1)
+print(summary(lm.x1))
 
 
 #x2:
 lm.x2 <- lm(y~x2) 
-print(lm.x2)
+print(summary(lm.x2))
 
 # Was haben Sie für Koeffizeinten bekommen? Wenn wir daran denken, dass x2 = 2*x1 ist, wissen wir, dass 
 # y = x1 + x2
@@ -115,10 +115,10 @@ ggplot(pyreg,aes(x=x2,y=y)) + geom_point() + geom_smooth(method="lm")
 # Berechnen Sie die zwei Regressionsmodelle für y ~ x1 und y ~ x2
 
 lm.pyreg.x1 <- lm(y~x1, data=pyreg)
-print(lm.pyreg.x1)
+print(summary(lm.pyreg.x1))
 
 lm.pyreg.x2 <- lm(y~x2, data=pyreg)
-print(lm.pyreg.x2)
+print(summary(lm.pyreg.x2))
 
 
 # Bevor Sie die Regression y ~ x1 + x2 berechnen, schauen Sie sich die
