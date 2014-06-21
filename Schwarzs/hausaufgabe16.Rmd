@@ -65,7 +65,7 @@ Haben Sie dabei explorativ oder konfirmativ gearbeitet? Was hat das für eine Au
 Nur zu Prüfungszwecken.
 
 # Analyse
-Fragestellung: Wovon hängt der Preis eines Diamenten ab? Hat die Farbe eine Auswirkung auf den Preis?
+Fragestellung: Wovon hängt der Preis eines Diamenten ab? Welche Variable hat den größten Einfluss auf den Preis?
 
 Zuerst Einfluss der Farbe:
 
@@ -85,4 +85,3 @@ color.num <- as.numeric(diamonds$color)
 diamonds.lm1 <- lm(price ~ color.num, data=diamonds)
   summary(diamonds.lm1)
   
-print(diamonds)
