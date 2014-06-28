@@ -74,11 +74,16 @@ Wir können auf ähnliche Art und Weise ein Plot für die Versuchspersonen und S
 
 Erstellen Sie einen Boxplot für `frequency` nach `subject`, wie oben für `frequency` nach `attitude` gemacht wurde (hier ohne Aufteilung nach Geschlecht). Dieser gibt uns einen Blick in die Varianz innerhalb und zwischen Versuchspersonen. 
 
-CODE_BLOCK_HIER
+```{r, fig.width=7, fig.height=4, fig.align='center'}
+ggplot(stimmen) +
+  geom_boxplot(aes(x=subject,y=frequency)) 
+```
 
 Machen Sie das gleiche für `scenario`. 
-
-CODE_BLOCK_HIER
+```{r, fig.width=7, fig.height=4, fig.align='center'}
+ggplot(stimmen) +
+  geom_boxplot(aes(x=subject,y=scenario))
+```
 
 Gibt es mehr Varianz zwischen Szenarien oder zwischen Versuchspersonen? 
 
